@@ -7,14 +7,9 @@ use warnings;
 $b = 0;
 
 for( $a = 0; $a < 1000; $a = $a + 1) {
-  if( $a % 3 == 0 ) {
+  if( $a % 3 == 0 or $a % 5 == 0 ) {
     $b += $a;
-    next;
   }  
-  if( $a % 5 == 0) {
-    $b += $a;
-    next;
-  } 
 }
 
 print($b, "\n");
