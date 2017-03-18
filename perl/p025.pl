@@ -1,10 +1,14 @@
 #!/usr/bin/perl
 
-sub fib {
-  my $n = shift;
-  $n < 2 ? $n : fib($n - 1) + fib($n - 2);
-}
+use strict;
+use warnings;
+use bignum;
 
-for($i = 0; $i < 1000; $i++) {
-  fib($i);
+my $count = 2;
+my @vals = (0,1);
+
+while(1) {
+  push @vals, ($vals[-1] + $vals[-2]);
+  die $count if $vals[-1] =~ m/\d{1000}/;
+  $count++;
 }
